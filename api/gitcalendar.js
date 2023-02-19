@@ -1,4 +1,6 @@
 const gitCalendarUrl = 'https://github.com/users/{username}/contributions';
+// const gitCalendarUrl = 'https://cors-anywhere.herokuapp.com/https://github.com/users/{username}/contributions';
+
 
 async function getGitCalendar(username) {
   const url = gitCalendarUrl.replace('{username}', username);
@@ -51,4 +53,4 @@ async function renderGitCalendar(username) {
   document.body.appendChild(container);
 }
 
-renderGitCalendar('your-username');
+renderGitCalendar('Yy2z');

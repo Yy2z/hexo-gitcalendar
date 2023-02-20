@@ -23,7 +23,10 @@ class handler(BaseHTTPRequestHandler):
         path = self.path
         user = path.split('?')[1]
         data = getdata(user)
-        self.send_response(200)
+        if "error" in data:
+            self.send_response(404)
+        else:
+            self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Content-type', 'application/json')
         self.end_headers()
